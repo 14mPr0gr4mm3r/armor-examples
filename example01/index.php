@@ -1,8 +1,8 @@
 <?php
 /**
- * A simple example of use of Armor
+ * 01 - The first example of use of Armor
  * @author 14mPr0gr4mm3r
- * @license GPL-3.0
+ * @license MIT
  */
 
 require_once "../vendor/autoload.php";
