@@ -3,7 +3,7 @@
     "description": "Some examples of how to use Armor",
     "require": {
         "php": "^7.3",
-        "14mpr0gr4mm3r/armor-lib": "^1.1"
+        "14mpr0gr4mm3r/armor-lib": ">=1.1.2"
     },
     "license": "MIT"
 }

@@ -5,14 +5,13 @@
  * @license GPL-3.0
  */
 
-require_once "../src/Application.php";
-require_once "../src/extensions/ArmorTemplating/__all__.php";
+require_once "../vendor/autoload.php";
 
 use Armor\HandlingTools\Request;
 use Armor\HandlingTools\Response;
 
 $app = new Armor\Application();
-$templ = new ArmorTemplating\TemplateManager("./", ["header", "index"]);
+$templ = new Armor\Extensions\ArmorTemplating\TemplateManager("./", ["header", "index"]);
 
 class User {
     private $id, $name, $desc, $birthday;
