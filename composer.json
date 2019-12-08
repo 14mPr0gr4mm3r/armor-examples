@@ -2,6 +2,7 @@
     "name": "14mpr0gr4mm3r/armor-examples",
     "description": "Some examples of how to use Armor",
     "require": {
+        "php": "^7.3",
         "14mpr0gr4mm3r/armor-lib": "^1.1"
     },
     "license": "MIT"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "575dc8047d354ef9195c2be1c7351901",
+    "content-hash": "6f660cd66dd170b97125f971efe383d1",
     "packages": [
         {
             "name": "14mpr0gr4mm3r/armor-lib",
@@ -58,6 +58,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.3"
+    },
     "platform-dev": []
 }
