@@ -4,30 +4,33 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9e0ccabc7e938b668f17b2e7ea3b656c",
+    "content-hash": "ddb1bcf5adbc9d978c57446f5b28137d",
     "packages": [
         {
             "name": "14mpr0gr4mm3r/armor-lib",
-            "version": "v1.1.2",
+            "version": "v1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/14mPr0gr4mm3r/armor-lib.git",
-                "reference": "7a1e2c51b794926e422bbdc1630a5bc1462ed726"
+                "reference": "cff066f66d990f3424630fdf1dd5614986bd4ace"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/14mPr0gr4mm3r/armor-lib/zipball/7a1e2c51b794926e422bbdc1630a5bc1462ed726",
-                "reference": "7a1e2c51b794926e422bbdc1630a5bc1462ed726",
+                "url": "https://api.github.com/repos/14mPr0gr4mm3r/armor-lib/zipball/cff066f66d990f3424630fdf1dd5614986bd4ace",
+                "reference": "cff066f66d990f3424630fdf1dd5614986bd4ace",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2"
             },
+            "require-dev": {
+                "phpunit/phpunit": "8"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "Armor\\": "src/",
-                    "Armor\\HandlingTools\\": "src/resources",
+                    "Armor\\Handle\\": "src/resources",
                     "Armor\\Exceptions\\": "src/resources/Exceptions",
                     "Armor\\Extensions\\": "src/extensions"
                 }
@@ -50,7 +53,7 @@
                 "php",
                 "routing"
             ],
-            "time": "2019-12-08T19:06:31+00:00"
+            "time": "2020-06-23T21:15:50+00:00"
         }
     ],
     "packages-dev": [],

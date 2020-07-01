@@ -1,9 +1,20 @@
 {
     "name": "14mpr0gr4mm3r/armor-examples",
     "description": "Some examples of how to use Armor",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../armor-lib"
+        },
+	{
+	    "type": "path",
+	    "url": "../armor-ui"
+	}
+    ],
     "require": {
         "php": "^7.3",
-        "14mpr0gr4mm3r/armor-lib": ">=1.1.2"
+        "armor/framework": ">=1.2.0",
+	"14mpr0gr4mm3r/armor-ui": "^0.1.0"
     },
     "license": "MIT"
 }

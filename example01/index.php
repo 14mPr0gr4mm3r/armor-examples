@@ -7,11 +7,11 @@
 
 require_once "../vendor/autoload.php";
 
-use Armor\HandlingTools\Request;
-use Armor\HandlingTools\Response;
+use Armor\Handle\Request;
+use Armor\Handle\Response;
 
 $app = new Armor\Application();
-$templ = new Armor\Extensions\ArmorTemplating\TemplateManager("./", ["header", "index"]);
+$templ = new ArmorUI\TemplateManager("./", ["header", "index"]);
 
 class User {
     private $id, $name, $desc, $birthday;
@@ -25,7 +25,7 @@ class User {
     }
 
     public static function loadFromID(int $id) {
-        $db = array(123456 => array('name' => 'Fulano', 'desc' => null, 'birthday' => '12/10/1979'));
+        $db = array(123456 => array('name' => 'Person', 'desc' => null, 'birthday' => '12/10/1979'));
         return array_key_exists($id, $db) ? new User($id, ...array_values($db[$id])) : exit('User not found');
     }
 
@@ -37,7 +37,7 @@ class User {
 
 $my_handlers = array(
     function(Request $req, Response $res) {
-        $template = Armor\HandlingTools\Response::loadContentFrom("pages.json", Response::JSON_PARSE);
+        $template = Response::loadContentFrom("pages.json", Response::JSON_PARSE);
         $keys = explode('/', substr($req->path, 1));
     
         $content = $template;
