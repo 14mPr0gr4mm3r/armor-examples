@@ -62,12 +62,12 @@ $app->get('/users/$(user:toint:toparse)', function(Request $req, Response $res) 
     return $res->end();
 })->setParser(function($id) { return User::loadFromID($id); });
 
-$app->get('/examples/$(examplename)', function(Request $req, Response $res) {
+$app->get('/examples/$(examplename)', function(Request $req, Response $res, $app) {
     switch($req->path['examplename']) {
         case 'templates_json':
-            return call_user_func($this['MyHandlers'][0], $req, $res);
+            return call_user_func($app['MyHandlers'][0], $req, $res);
         case 'templates_framework':
-            return call_user_func($this['MyHandlers'][1], $req, $res);
+            return call_user_func($app['MyHandlers'][1], $req, $res);
         default:
             break;
     }

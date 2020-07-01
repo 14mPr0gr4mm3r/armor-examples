@@ -4,40 +4,27 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ddb1bcf5adbc9d978c57446f5b28137d",
+    "content-hash": "ef3630775dcca64fc66edaf45a5b3496",
     "packages": [
         {
-            "name": "14mpr0gr4mm3r/armor-lib",
-            "version": "v1.1.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/14mPr0gr4mm3r/armor-lib.git",
-                "reference": "cff066f66d990f3424630fdf1dd5614986bd4ace"
-            },
+            "name": "14mpr0gr4mm3r/armor-ui",
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/14mPr0gr4mm3r/armor-lib/zipball/cff066f66d990f3424630fdf1dd5614986bd4ace",
-                "reference": "cff066f66d990f3424630fdf1dd5614986bd4ace",
-                "shasum": ""
+                "type": "path",
+                "url": "../armor-ui",
+                "reference": "ecc194694c9eacb395abd6e753d35d1caefee6ff"
             },
             "require": {
-                "php": "^7.2"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "8"
+                "php": "^7.3"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Armor\\": "src/",
-                    "Armor\\Handle\\": "src/resources",
-                    "Armor\\Exceptions\\": "src/resources/Exceptions",
-                    "Armor\\Extensions\\": "src/extensions"
+                    "ArmorUI\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPL-3.0"
+                "MIT"
             ],
             "authors": [
                 {
@@ -45,21 +32,73 @@
                     "role": "Developer"
                 }
             ],
-            "description": "Armor aims to be an useful routing (and more things) framework for back-end developers.",
+            "description": "An UI library to extend the Armor framework",
+            "keywords": [
+                "armor-lib",
+                "armor-ui",
+                "components",
+                "extension",
+                "php",
+                "ui",
+                "views"
+            ]
+        },
+        {
+            "name": "armor/framework",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../armor-lib",
+                "reference": "8da22134ad5138346959e39d1d8056d042581001"
+            },
+            "require": {
+                "php": "^7.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Armor\\": [
+                        "src/",
+                        "src/Resources"
+                    ],
+                    "Armor\\Handle\\": "src/Resources/Handle",
+                    "Armor\\Exceptions\\": "src/Resources/Exceptions"
+                }
+            },
+            "scripts": {
+                "test": [
+                    "phpunit --bootstrap ./vendor/autoload.php --testdox tests"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gustavo Sampaio (14mPr0gr4mm3r)",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Armor aims to be an useful routing framework for PHP developers.",
             "keywords": [
                 "armor-lib",
                 "extensions",
                 "framework",
                 "php",
                 "routing"
-            ],
-            "time": "2020-06-23T21:15:50+00:00"
+            ]
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "armor/framework": 20,
+        "14mpr0gr4mm3r/armor-ui": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
