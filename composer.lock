@@ -4,15 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef3630775dcca64fc66edaf45a5b3496",
+    "content-hash": "7c19063f8a23216f3e3e8348e94cd5be",
     "packages": [
         {
             "name": "14mpr0gr4mm3r/armor-ui",
-            "version": "dev-master",
+            "version": "v0.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/14mPr0gr4mm3r/armor-ui.git",
+                "reference": "5492fdfadacd887bb4a480bc601174b13feb25e2"
+            },
             "dist": {
-                "type": "path",
-                "url": "../armor-ui",
-                "reference": "ecc194694c9eacb395abd6e753d35d1caefee6ff"
+                "type": "zip",
+                "url": "https://api.github.com/repos/14mPr0gr4mm3r/armor-ui/zipball/5492fdfadacd887bb4a480bc601174b13feb25e2",
+                "reference": "5492fdfadacd887bb4a480bc601174b13feb25e2",
+                "shasum": ""
             },
             "require": {
                 "php": "^7.3"
@@ -23,6 +29,7 @@
                     "ArmorUI\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -41,20 +48,28 @@
                 "php",
                 "ui",
                 "views"
-            ]
+            ],
+            "time": "2020-06-30T21:22:31+00:00"
         },
         {
             "name": "armor/framework",
-            "version": "dev-master",
+            "version": "v1.2.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/14mPr0gr4mm3r/armor-lib.git",
+                "reference": "febf8d81b53619a902cc5a84cfa0998770c49345"
+            },
             "dist": {
-                "type": "path",
-                "url": "../armor-lib",
-                "reference": "8da22134ad5138346959e39d1d8056d042581001"
+                "type": "zip",
+                "url": "https://api.github.com/repos/14mPr0gr4mm3r/armor-lib/zipball/febf8d81b53619a902cc5a84cfa0998770c49345",
+                "reference": "febf8d81b53619a902cc5a84cfa0998770c49345",
+                "shasum": ""
             },
             "require": {
                 "php": "^7.3"
             },
             "require-dev": {
+                "phpdocumentor/phpdocumentor": "^2",
                 "phpunit/phpunit": "^9"
             },
             "type": "library",
@@ -68,11 +83,7 @@
                     "Armor\\Exceptions\\": "src/Resources/Exceptions"
                 }
             },
-            "scripts": {
-                "test": [
-                    "phpunit --bootstrap ./vendor/autoload.php --testdox tests"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -89,16 +100,14 @@
                 "framework",
                 "php",
                 "routing"
-            ]
+            ],
+            "time": "2020-07-06T21:55:12+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "armor/framework": 20,
-        "14mpr0gr4mm3r/armor-ui": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

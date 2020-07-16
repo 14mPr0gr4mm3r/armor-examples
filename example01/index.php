@@ -13,6 +13,28 @@ use Armor\Handle\Response;
 $app = new Armor\Application();
 $templ = new ArmorUI\TemplateManager("./", ["header", "index"]);
 
+if ((function_exists('apc_fetch') && !($db = apc_fetch('db_cache')))
+    || (!function_exists('apc_fetch'))) 
+{
+    $db = array();
+
+    for($i = 0; $i < 1000; $i++) {
+        $name = 'Person';
+        $description = null;
+        $birthday = implode('/', [
+            random_int(1, 31),
+            random_int(1, 12),
+            random_int(1900, 2100)
+        ]);
+
+        $db[$i] = array('name' => 'Person', 'desc' => null, 'birthday' => '12/10/1979');
+    }
+
+    if(function_exists('apc_fetch')) {
+        apc_add('db_cache', $db, 3600);
+    }
+}
+
 class User {
     private $id, $name, $desc, $birthday;
 
@@ -25,7 +47,7 @@ class User {
     }
 
     public static function loadFromID(int $id) {
-        $db = array(123456 => array('name' => 'Person', 'desc' => null, 'birthday' => '12/10/1979'));
+        global $db;
         return array_key_exists($id, $db) ? new User($id, ...array_values($db[$id])) : exit('User not found');
     }
 
@@ -38,7 +60,7 @@ class User {
 $my_handlers = array(
     function(Request $req, Response $res) {
         $template = Response::loadContentFrom("pages.json", Response::JSON_PARSE);
-        $keys = explode('/', substr($req->path, 1));
+        $keys = explode('/', substr($req->path->absolute, 1));
     
         $content = $template;
     
@@ -62,7 +84,7 @@ $app->get('/users/$(user:toint:toparse)', function(Request $req, Response $res) 
     return $res->end();
 })->setParser(function($id) { return User::loadFromID($id); });
 
-$app->get('/examples/$(examplename)', function(Request $req, Response $res, $app) {
+$app->get('/examples/$(examplename)', function(Request $req, Response $res, \Armor\Application $app) {
     switch($req->path['examplename']) {
         case 'templates_json':
             return call_user_func($app['MyHandlers'][0], $req, $res);

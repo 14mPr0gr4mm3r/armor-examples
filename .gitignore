@@ -1,2 +1,6 @@
 /vendor/
+/scripts/
+
+.vscode
+
 composer.lock
