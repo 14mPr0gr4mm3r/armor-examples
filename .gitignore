@@ -1,6 +1,8 @@
-/vendor/
+/**/vendor
 /scripts/
 
 .vscode
 
-composer.lock
+/example02/
+
+/**/composer.lock

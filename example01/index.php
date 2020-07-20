@@ -5,7 +5,7 @@
  * @license MIT
  */
 
-require_once "../vendor/autoload.php";
+require_once "./vendor/autoload.php";
 
 use Armor\Handle\Request;
 use Armor\Handle\Response;
@@ -84,11 +84,11 @@ $app->get('/users/$(user:toint:toparse)', function(Request $req, Response $res) 
     return $res->end();
 })->setParser(function($id) { return User::loadFromID($id); });
 
-$app->get('/examples/$(examplename)', function(Request $req, Response $res, \Armor\Application $app) {
+$app->get('/templates-examples/$(examplename)', function(Request $req, Response $res, \Armor\Application $app) {
     switch($req->path['examplename']) {
-        case 'templates_json':
+        case 'templates-json':
             return call_user_func($app['MyHandlers'][0], $req, $res);
-        case 'templates_framework':
+        case 'templates-framework':
             return call_user_func($app['MyHandlers'][1], $req, $res);
         default:
             break;

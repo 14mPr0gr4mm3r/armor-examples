@@ -1,10 +1,5 @@
 {
     "name": "14mpr0gr4mm3r/armor-examples",
     "description": "Some examples of how to use Armor",
-    "require": {
-        "php": "^7.3",
-        "armor/framework": "^1.2",
-	    "14mpr0gr4mm3r/armor-ui": "^0.1"
-    },
     "license": "MIT"
 }

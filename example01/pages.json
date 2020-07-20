@@ -1,6 +1,6 @@
 {
-    "examples": {
-        "templates_json": {
+    "templates-examples": {
+        "templates-json": {
             "content": "<h1>Hello, World!</h1>"
         }
     }
